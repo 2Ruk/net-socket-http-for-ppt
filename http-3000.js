@@ -5,7 +5,7 @@ const server = net.createServer((socket) => {
 
         console.log('Received:', data.toString()); // 클라이언트 요청 메시지 출력
         // HTTP 응답 메시지 구성
-        const httpResponse = `HTTP/1.1 200 OK\r\nContent-Type: text/html; charset=UTF-8\r\n\r\n<h1>Welcome to the HTTP Server!</h1>`;
+        const httpResponse = `HTTP/2.0 200 OK; \nContent-Type: text/html; charset=UTF-8\r\n\r\n<h1>Welcome to the HTTP Server!</h1>`;
 
         // 응답 전송
         socket.write(httpResponse);
@@ -15,7 +15,7 @@ const server = net.createServer((socket) => {
 });
 
 server.listen(3000, () => {
-    console.log('Server is running on port 7777');
+    console.log('Server is running on port 3000');
 });
 
 /**
